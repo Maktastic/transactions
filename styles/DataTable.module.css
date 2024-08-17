@@ -1,0 +1,137 @@
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  .data-table th,
+  .data-table td {
+    padding: 15px 15px;
+    border: 1px solid #ddd;
+  }
+  
+  .data-table thead {
+    background-color: #f4f4f4;
+  }
+  
+  .data-table th {
+    background-color: #333;
+    color: #fff;
+    font-weight: 500;
+  }
+  
+  .data-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .data-table tbody tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+  }
+  
+  .data-table td {
+    word-wrap: break-word;
+  }
+  
+  .data-table button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .data-table button:hover {
+    background-color: #45a049;
+  }
+  
+  .data-table .delete-button {
+    background-color: #f44336;
+  }
+  
+  .data-table .delete-button:hover {
+    background-color: #e53935;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .data-table, .data-table thead, .data-table tbody, .data-table th, .data-table td, .data-table tr {
+      display: block;
+    }
+  
+    .data-table {
+      border: none;
+      background-color: #f8f8f8;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+  
+    .data-table tr {
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 8px;
+      background-color: #ffffff;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+  
+    .data-table td {
+      text-align: left;
+      padding: 8px 10px;
+      position: relative;
+      font-size: 14px;
+      border: none;
+      border-bottom: 1px solid #eee;
+    }
+  
+    .data-table td:last-child {
+      border-bottom: none;
+    }
+  
+    .data-table td::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-weight: bold;
+      font-size: 14px;
+      color: #555;
+    }
+  
+    .data-table th {
+      display: none;
+    }
+  
+    .data-table tr:last-child {
+      margin-bottom: 0;
+    }
+  
+    .data-table td[data-label="Actions"] {
+      text-align: center;
+    }
+  
+    /* Compact button styling */
+    .data-table button {
+      padding: 5px 10px;
+      font-size: 12px;
+      border-radius: 5px;
+    }
+  
+    .data-table button.delete-button {
+      background-color: #e74c3c;
+      color: white;
+    }
+  
+    .data-table button.update-button {
+      background-color: #3498db;
+      color: white;
+      margin-right: 5px;
+    }
+  }
+  
+  
