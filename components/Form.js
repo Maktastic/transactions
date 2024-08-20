@@ -13,6 +13,7 @@ const purchaseSites = [
   { id: 7, text: 'Reliance Digital' },
   { id: 8, text: 'Sangeetha' },
   { id: 9, text: 'Iqoo Vivo' },
+	{ id: 10, text: 'Samsung' }
 ];
 
 const salesParties = [
@@ -23,6 +24,8 @@ const salesParties = [
   { id: 5, text: 'SK Huzefa' },
   { id: 6, text: 'Abhishek' },
   { id: 7, text: 'Aswami' },
+	{ id: 8, text: 'Self' },
+	{ id: 9, text: 'MZ Surat' }
 ];
 
 export default function Form({ fetchRecords, setRecords, currentRecord }) {
