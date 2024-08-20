@@ -54,18 +54,17 @@ export default function Form({ fetchRecords, setRecords, currentRecord }) {
 
   useEffect(() => {
     if (currentRecord) {
-      console.log('Current record:', currentRecord);
       
       setForm({
-        id: currentRecord.id,
-        date: currentRecord.date || '',
-        phoneModel: currentRecord.phone_model || '',
-        purchaseSite: currentRecord.purchase_site || '',
-        purchaseAmount: currentRecord.purchase_amount || '',
-        purchaseQuantity: currentRecord.purchase_quantity || '',
-        salesParty: currentRecord.sales_party || '',
-        salesAmount: currentRecord.sales_amount || '',
-        salesQuantity: currentRecord.sales_quantity || '',
+        id: currentRecord._id,
+        date: currentRecord.date.split('T')[0] || '',
+				phoneModel: currentRecord.phoneModel || '',
+				purchaseSite: currentRecord.purchaseSite || '',
+				purchaseAmount: currentRecord.purchaseAmount || '',
+				purchaseQuantity: currentRecord.purchaseQuantity || '',
+				salesParty: currentRecord.salesParty || '',
+				salesAmount: currentRecord.salesAmount || '',
+				salesQuantity: currentRecord.salesQuantity || '',
         profit: setProfit(currentRecord.profit || ''),
       });
     }
@@ -99,7 +98,6 @@ export default function Form({ fetchRecords, setRecords, currentRecord }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form data:', { ...form, profit });
     try {
       // Check if salesParty and purchaseSite are selected
       if (_.isEmpty(form.salesParty) || _.isEmpty(form.purchaseSite)) {

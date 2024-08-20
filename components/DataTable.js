@@ -35,25 +35,26 @@ export default function DataTable({ fetchRecords, records, setRecords, onEdit })
           <th>Actions</th>
         </tr>
       </thead>
-      <tbody>
-        {records.map(record => (
-          <tr key={record.id}>
-            <td>{record.date}</td>
-            <td>{record.phone_model}</td>
-            <td>{record.purchase_site}</td>
-            <td>₹ {record.purchase_amount}</td>
-            <td>{record.purchase_quantity}</td>
-            <td>{record.sales_party}</td>
-            <td>₹ {record.sales_amount}</td>
-            <td>{record.sales_quantity}</td>
-            <td>₹ {record.profit}</td>
-            <td style={{ display: 'flex', gap: '10px' }}>
-              <button onClick={() => onEdit(record)}>Update</button>
-              <button onClick={() => handleDelete(record.id)}>Delete</button>
-            </td>
-          </tr>
-        ))}
-      </tbody>
+			<tbody>
+				{records.map((record, index) => (
+					<tr key={index}>
+						<td>{record.date ? record.date.split('T')[0] : null}</td>
+						<td>{record.phoneModel}</td>
+						<td>{record.purchaseSite}</td>
+						<td>₹ {record.purchaseAmount}</td>
+						<td>{record.purchaseQuantity}</td>
+						<td>{record.salesParty}</td>
+						<td>₹ {record.salesAmount}</td>
+						<td>{record.salesQuantity}</td>
+						<td>₹ {record.profit}</td>
+						<td style={{ display: 'flex', gap: '10px' }}>
+							<button onClick={() => onEdit(record)}>Update</button>
+							<button onClick={() => handleDelete(record._id)}>Delete</button>
+						</td>
+					</tr>
+				))}
+			</tbody>
+
     </table>
   );
 }
